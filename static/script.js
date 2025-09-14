@@ -32,13 +32,15 @@ document.getElementById("file-input").addEventListener("change", function() {
         this.files[0] ? this.files[0].name : "No file chosen";
 });
 
+const BACKEND_URL = "https://face-detection-6gx3.onrender.com";
+
 // Upload form submit
 document.getElementById("upload-form").onsubmit = async function(e) {
     e.preventDefault();
     const formData = new FormData(this);
     document.getElementById("result").innerHTML = "Processing...";
 
-    const res = await fetch("/upload", { method: "POST", body: formData });
+    const res = await fetch(`${BACKEND_URL}/upload`, { method: "POST", body: formData });
     const data = await res.json();
 
     if (data.error) {
@@ -48,7 +50,7 @@ document.getElementById("upload-form").onsubmit = async function(e) {
 
     document.getElementById("result").innerHTML = `
         <p>Number of faces detected: <strong>${data.num_faces}</strong></p>
-        <img src="${data.output_path}?t=${new Date().getTime()}" width="500"/>
+        <img src="${BACKEND_URL}${data.output_path}?t=${new Date().getTime()}" width="500"/>
     `;
 };
 
@@ -67,7 +69,7 @@ document.getElementById("capture-btn").addEventListener("click", function() {
         formData.append("file", blob, "captured.png");
         document.getElementById("result").innerHTML = "Processing...";
 
-        const res = await fetch("/upload", { method: "POST", body: formData });
+        const res = await fetch(`${BACKEND_URL}/upload`, { method: "POST", body: formData });
         const data = await res.json();
 
         if (data.error) {
@@ -77,7 +79,7 @@ document.getElementById("capture-btn").addEventListener("click", function() {
 
         document.getElementById("result").innerHTML = `
             <p>Number of faces detected: <strong>${data.num_faces}</strong></p>
-            <img src="${data.output_path}?t=${new Date().getTime()}" width="500"/>
+            <img src="${BACKEND_URL}${data.output_path}?t=${new Date().getTime()}" width="500"/>
         `;
     }, "image/png");
 });
