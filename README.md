@@ -12,7 +12,6 @@ Users can upload an image or capture a photo from their camera, and the app will
 - Built with:
   - [Flask](https://flask.palletsprojects.com/) (Python backend)
   - [OpenCV](https://opencv.org/) (Face detection)
-  - [Vite](https://vitejs.dev/) (Frontend bundler)
 
 ---
 
