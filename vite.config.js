@@ -1,11 +1,11 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  root: 'src',               // entry folder for index.html
-  publicDir: 'static',       // your static assets folder
-  base: './',                // relative paths for CSS/JS
+  root: 'src',              // entry folder for index.html
+  publicDir: 'static',      // static assets folder inside project
+  base: './',               // relative paths for deployment
   build: {
-    outDir: '../dist',       // output build in project root
+    outDir: 'dist',         // build output inside project root
     emptyOutDir: true,
     sourcemap: true
   },

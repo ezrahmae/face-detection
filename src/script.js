@@ -84,6 +84,10 @@ document.getElementById("capture-btn").addEventListener("click", function () {
     // clear result before sending new image
     document.getElementById("result").innerHTML = "Processing...";
 
+    fetch('/api/detect')
+      .then(res => res.json())
+      .then(data => console.log(data));
+
     // send captured image to backend
     fetch("/upload", {
       method: "POST",
