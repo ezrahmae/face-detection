@@ -1,6 +1,6 @@
 # Face Detection 🖼️👤
 
-A simple web application for **face detection** using **Flask, OpenCV, and Vite**.  
+A simple web application for **face detection** using **Flask and OpenCV**.  
 Users can upload an image or capture a photo from their camera, and the app will detect faces and display the result.
 
 ---
