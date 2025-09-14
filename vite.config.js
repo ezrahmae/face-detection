@@ -1,16 +1,18 @@
 const isCodeSandbox = 'SANDBOX_URL' in process.env || 'CODESANDBOX_HOST' in process.env;
 
-export default {
-  root: 'src/',              // entry point folder for index.html
-  publicDir: '../static/',   // where your css/js/images live
+import { defineConfig } from 'vite';
+
+export default defineConfig({
+  root: 'src',               // your index.html entry point
+  publicDir: 'static',       // move your static folder inside project root
   base: './',                // use relative paths for deployment
   server: {
     host: true,
-    open: !isCodeSandbox     // auto-open in dev
+    open: !isCodeSandbox
   },
   build: {
-    outDir: '../dist',       // single build section (no duplicates)
+    outDir: 'dist',          // build output inside project folder
     emptyOutDir: true,
     sourcemap: true
   }
-};
+});
