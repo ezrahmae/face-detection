@@ -4,36 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Face Detection</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <div class="container">
         <h1>Face Detection</h1>
 
-        <!-- buttons to choose upload or capture -->
         <div class="buttons">
             <button onclick="showUpload()">Upload Photo</button>
             <button onclick="showCamera()">Capture from Camera</button>
         </div>
 
-        <!-- upload form -->
+        <!-- Upload form -->
         <form id="upload-form" style="display: none;" enctype="multipart/form-data">
-          <input type="file" id="file-input" name="file" accept="image/*" required />
-          <label for="file-input" id="file-label">Choose a file</label>
-          <span id="file-name">No file chosen</span>
-          <button type="submit">Upload</button>
+            <input type="file" id="file-input" name="file" accept="image/*" required />
+            <span id="file-name">No file chosen</span>
+            <button type="submit">Upload</button>
         </form>
 
-        <!-- camera section -->
+        <!-- Camera section -->
         <div id="camera-section" style="display: none;">
             <video id="video" autoplay></video>
             <button id="capture-btn">Capture</button>
-            <canvas id="canvas" style="display: none;"></canvas>
+            <canvas id="canvas" style="display:none;"></canvas>
         </div>
 
         <div id="result"></div>
     </div>
 
-    <script type="module" src="./script.js"></script>
+    <script type="module" src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
