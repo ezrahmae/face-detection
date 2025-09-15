@@ -50,7 +50,7 @@ document.getElementById("upload-form").onsubmit = async function(e) {
 
     document.getElementById("result").innerHTML = `
         <p>Number of faces detected: <strong>${data.num_faces}</strong></p>
-        <img src="${BACKEND_URL}${data.output_path}?t=${new Date().getTime()}" width="500"/>
+        <img src="${BACKEND_URL}${data.output_path}?t=${new Date().getTime()}" class="result-img"/>
     `;
 };
 
@@ -79,7 +79,7 @@ document.getElementById("capture-btn").addEventListener("click", function() {
 
         document.getElementById("result").innerHTML = `
             <p>Number of faces detected: <strong>${data.num_faces}</strong></p>
-            <img src="${BACKEND_URL}${data.output_path}?t=${new Date().getTime()}" width="500"/>
+            <img src="${BACKEND_URL}${data.output_path}?t=${new Date().getTime()}" class="result-img"/>
         `;
     }, "image/png");
 });
