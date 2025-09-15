@@ -25,7 +25,13 @@
         <!-- Camera section -->
         <div id="camera-section" style="display: none;">
             <video id="video" autoplay></video>
-            <button id="capture-btn">Capture</button>
+            <button id="capture-btn" aria-label="Capture" class="icon-btn">
+              <span>
+                <svg width="36" height="36" viewBox="0 0 32 32" fill="none" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="26 8 14 24 6 16"/>
+                </svg>
+              </span>
+            </button>
             <canvas id="canvas" style="display:none;"></canvas>
         </div>
 

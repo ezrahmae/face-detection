@@ -16,8 +16,17 @@ window.showCamera = async function() {
         video.srcObject.getTracks().forEach(track => track.stop());
     }
 
+    // Use constraints for mobile
+    const constraints = {
+        video: {
+            facingMode: "user",
+            width: { ideal: 400 },
+            height: { ideal: 300 }
+        }
+    };
+
     try {
-        const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+        const stream = await navigator.mediaDevices.getUserMedia(constraints);
         video.srcObject = stream;
         video.play();
     } catch (err) {
