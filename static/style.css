@@ -67,3 +67,38 @@ label:hover {
   width: 100%;
   max-height: 300px;
 }
+
+@media (max-width: 500px) {
+  .container {
+    width: 95%;
+    padding: 10px;
+    margin: 10px auto;
+  }
+
+  h1 {
+    font-size: 1.5em;
+  }
+
+  button {
+    width: 100%;
+    font-size: 15px;
+    padding: 12px 0;
+    margin: 8px 0;
+  }
+
+  label {
+    font-size: 13px;
+    padding: 8px;
+  }
+
+  #video {
+    max-height: 200px;
+    width: 100%;
+  }
+
+  #result img {
+    width: 100% !important;
+    max-width: 100%;
+    height: auto;
+  }
+}
