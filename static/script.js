@@ -37,8 +37,9 @@ window.showCamera = async function() {
 
 // Update filename when selecting file
 document.getElementById("file-input").addEventListener("change", function() {
-    document.getElementById("file-name").textContent =
-        this.files[0] ? this.files[0].name : "No file chosen";
+    if (this.files[0]) {
+        document.getElementById("upload-form").requestSubmit();
+    }
 });
 
 const BACKEND_URL = "https://face-detection-6gx3.onrender.com";
